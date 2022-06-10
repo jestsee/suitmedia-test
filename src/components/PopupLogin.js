@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './PopupLogin.css';
 
-export default function PopupLogin() {
-    const [modal, setModal] = useState(false);
-    const toggleModal = () => {
-        setModal(!modal)
-    }
+export default function PopupLogin({show, handler}) {
+    var modal = show
+    console.log("modal: ",modal);
 
     // non-active scrolling
     if(modal) {
@@ -14,7 +12,8 @@ export default function PopupLogin() {
         document.body.classList.remove('active-modal')
     }
 
-    // initial values
+    // LOGIN
+    // initial values 
     const initialValues = {email:"", password:""}
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
@@ -55,13 +54,13 @@ export default function PopupLogin() {
 
     return (
         <>
-            <button className='btn-modal' onClick={toggleModal}>
+            {/* <button className='btn-modal' onClick={toggleModal}>
                 Open
-            </button>
+            </button> */}
 
             {modal && (
                 <div className='modal'>
-                    <div className='overlay' onClick={toggleModal}></div>
+                    <div className='overlay' onClick={handler}></div>
                     <form className='modal-content' onSubmit={handleSubmit}>
                         {/* <pre>{JSON.stringify(formValues, undefined, 2)}</pre> */}
                         <h2>Login</h2>
