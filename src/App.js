@@ -1,12 +1,14 @@
 import "./App.css";
+import Comments from "./components/Comments";
 import Navbar from "./components/Navbar/Navbar";
-import Modal from "./components/Modal";
+import Post from "./components/Post";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <PopupLogin/> */}
+      <Post/>
+      <Comments/>
     </div>
   );
 }

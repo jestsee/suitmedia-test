@@ -1,4 +1,5 @@
-[
+{
+    "comments" : [
     {
         "id": "fa1ca3c1-cc1e-4ed9-86b8-f60d8312d499",
         "author": "Neal Topham",
@@ -52,4 +53,4 @@
         "point": 1,
         "replies": []
     }
-]
+]}

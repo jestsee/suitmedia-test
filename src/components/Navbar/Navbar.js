@@ -13,6 +13,7 @@ class Navbar extends Component {
 
   // handling hamburger click
   handleHamburgerClick = () => {
+    console.log("HAMBURGER: ", this.state.hamburgerClicked);
     this.setState({ hamburgerClicked: !this.state.hamburgerClicked });
   };
 
@@ -37,7 +38,7 @@ class Navbar extends Component {
             <span className="fa fa-search"></span>
             <input type="text" placeholder="Search" />
           </div>
-          <div className="menu-icon" onClick={this.Hamburger}>
+          <div className="menu-icon" onClick={this.handleHamburgerClick}>
             <i
               className={
                 this.state.hamburgerClicked ? "fas fa-times" : "fas fa-bars"
