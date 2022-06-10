@@ -1,9 +1,4 @@
 export const MenuItems = [
-    // {
-    //     title: 'Categories',
-    //     url: '#',
-    //     cName: 'nav-links dropdown-menu'
-    // },
     {
         title: 'Login',
         url: '#',
