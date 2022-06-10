@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CommentItem from "./CommentItem";
 
 class Comments extends Component {
     state = {
@@ -37,9 +38,22 @@ class Comments extends Component {
             return (
                 <ul>
                     {items.map(item => (
-                        <li key={item.id}>
-                            {item.author} {item.message}
-                        </li>
+                        // <li key={item.id}> {/* pake id apa pake indeks? */}
+                        //     {/* TODO panggil CommentItem disini */}
+                        //     {/* cek masih punya reply ga,
+                        //     kalo masih, iterate replynya,
+                        //     panggil CommentItem lagi*/}
+                        //     {item.author} {item.message}
+                        // </li>
+                        <CommentItem
+                        key={item.id}
+                        img="https://pbs.twimg.com/profile_images/1292632332/lorempixum_signet_400x400.png"
+                        name={item.author}
+                        date={item.date}
+                        message={item.message}
+                        points={item.point}
+                        replies={item.replies}
+                        />
                     ))}
                 </ul>
             )

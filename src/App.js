@@ -1,5 +1,5 @@
 import "./App.css";
-import Comments from "./components/Comments";
+import Comments from "./components/Comment/Comments";
 import Navbar from "./components/Navbar/Navbar";
 import Post from "./components/Post";
 
