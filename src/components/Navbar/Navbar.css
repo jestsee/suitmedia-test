@@ -21,13 +21,13 @@
 
 .nav-menu {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(3, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 55vw;
+    /* width: 55vw; */
     justify-content: end;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
 }
 
 .nav-links {
@@ -52,6 +52,65 @@
 
 .menu-icon {
     display: none;
+}
+
+/* search bar */
+.search-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.search-container input {
+    background: #DDDDDD;
+    width: 45vw;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    padding-left: 1.2rem;
+}
+
+.search-container .fa-search {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 4px;
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    left:40vw;
+    transform: translateY(-50%);
+}
+
+.search-input::placeholder {
+    color: #635C53;
+}
+
+/* dropdown menu */
+.dropdown-menu {
+    display: inline-block;
+}
+
+.dropdown-item {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-item a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-item a:hover {background-color: #f1f1f1;}
+
+.dropdown-menu:hover .dropdown-item {
+  display: block;
 }
 
 @media screen and (max-width: 960px) {
