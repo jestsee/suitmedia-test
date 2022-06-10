@@ -1,6 +1,6 @@
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import PopupLogin from './components/PopupLogin';
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Modal from "./components/Modal";
 
 function App() {
   return (
