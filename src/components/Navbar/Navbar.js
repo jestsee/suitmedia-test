@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from '../Button';
 import { DropdownItems } from './DropdownItem';
 import { MenuItems } from './MenuItem';
 import './Navbar.css';
