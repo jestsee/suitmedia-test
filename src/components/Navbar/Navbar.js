@@ -7,8 +7,8 @@ import "./Navbar.css";
 class Navbar extends Component {
   state = {
     hamburgerClicked: false,
-    showLogin: false,
-    showRegister: false,
+    showModal: false,
+    whichModal: null
   };
 
   // handling hamburger click
@@ -17,16 +17,22 @@ class Navbar extends Component {
     this.setState({ hamburgerClicked: !this.state.hamburgerClicked });
   };
 
+  handleModal = () => {
+    this.setState({showModal: !this.state.showModal})
+  }
+
   // handling login click
   handleLoginClick = () => {
-    console.log("SHOW LOGIN: ", this.state.showLogin);
-    this.setState({ showLogin: !this.state.showLogin });
+    this.handleModal()
+    console.log("which: ", this.state.whichModal);
+    this.setState({ whichModal: "login"});
   };
 
   // handling register click
   handleRegisterClick = () => {
-    console.log("SHOW REGISTER: ", this.state.showRegister);
-    this.setState({ showRegister: !this.state.showRegister });
+    this.handleModal()
+    console.log("which: ", this.state.whichModal);
+    this.setState({ whichModal: "register"});
   };
 
   render() {
@@ -81,14 +87,8 @@ class Navbar extends Component {
           </ul>
           {/* <Button>Sign Up</Button> */}
         </nav>
-        <Modal show={this.state.showLogin} handler={this.handleLoginClick}>
-          <Form register={false} />
-        </Modal>
-        <Modal
-          show={this.state.showRegister}
-          handler={this.handleRegisterClick}
-        >
-          <Form register={true} />
+        <Modal show={this.state.showModal} handler={this.handleModal}>
+          <Form register={this.state.whichModal==="login" ? false : true} />
         </Modal>
       </>
     );

@@ -24,8 +24,9 @@ export default function Form({ register }) {
 
   useEffect(() => {
     // successfully login
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
+    if (isSubmit && 
+      (Object.keys(formErrors).length === 0 ||
+      !register && Object.keys(formErrors).length === 1 && Object.keys(formErrors)[0] === "name")) {
       window.location.reload()
     }
   });
@@ -69,8 +70,8 @@ export default function Form({ register }) {
               value={formValues.name}
               onChange={handleChange}
             />
+            <p>{formErrors.name}</p>
           </div>
-          <p>{formErrors.name}</p>
         </>
       ) : null}
 
@@ -83,8 +84,8 @@ export default function Form({ register }) {
           value={formValues.email}
           onChange={handleChange}
         />
+        <p>{formErrors.email}</p>
       </div>
-      <p>{formErrors.email}</p>
 
       {/* password */}
       <div className={colorDecider(formErrors.password)}>
@@ -95,8 +96,8 @@ export default function Form({ register }) {
           value={formValues.password}
           onChange={handleChange}
         />
+        <p>{formErrors.password}</p>
       </div>
-      <p>{formErrors.password}</p>
       <button className="submit-button">{register ? "Create account" : "Login"}</button>
     </form>
   );

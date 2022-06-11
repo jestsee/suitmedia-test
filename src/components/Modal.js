@@ -13,18 +13,12 @@ export default function Modal({ show, handler, children }) {
 
   return (
     <>
-    {/* <button className='btn-modal' onClick={toggleModal}>
-              Open
-          </button> */}
-
     {modal && (
       <div className="modal">
         <div className="overlay" /* onClick={handler} */></div>
         <div className="modal-content">
           {children}
-          <button className="close-modal" onClick={handler}>
-            CLOSE
-          </button>
+          <button className="close-modal fas fa-times" onClick={handler}></button>
         </div>
       </div>
     )}
