@@ -9,8 +9,8 @@ export default function Discussion () {
         <ul>
           { DiscussionItems.map((item, index) => {
               return (
-                  <li><div className="numbers">{index}</div>
-                    <a key={index} className={item.cName} href={item.url}>
+                  <li key={index} ><div className="numbers">{index+1}</div>
+                    <a className={item.cName} href={item.url}>
                       {item.title}
                   </a></li>
               )
