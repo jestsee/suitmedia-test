@@ -9,7 +9,7 @@ class Comments extends Component {
     };
 
     componentDidMount() {
-        fetch("http://localhost:8000/comments")
+        fetch("http://localhost:3001/comments")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -38,20 +38,13 @@ class Comments extends Component {
             return (
                 <ul>
                     {items.map(item => (
-                        // <li key={item.id}> {/* pake id apa pake indeks? */}
-                        //     {/* TODO panggil CommentItem disini */}
-                        //     {/* cek masih punya reply ga,
-                        //     kalo masih, iterate replynya,
-                        //     panggil CommentItem lagi*/}
-                        //     {item.author} {item.message}
-                        // </li>
                         <CommentItem
                         key={item.id}
-                        img="https://pbs.twimg.com/profile_images/1292632332/lorempixum_signet_400x400.png"
+                        img={item.avatar}
                         name={item.author}
                         date={item.date}
                         message={item.message}
-                        points={item.point}
+                        point={item.point}
                         replies={item.replies}
                         />
                     ))}

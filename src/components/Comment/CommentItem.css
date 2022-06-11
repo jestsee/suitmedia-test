@@ -1,0 +1,30 @@
+.comment-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.comment-item img {
+    width: 7rem;
+}
+
+/* reply */
+.reply {
+    margin-left: 7rem;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.reply img {
+    width: 3.5rem;
+}
+
+/* vote */
+.vote {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.point-container p {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
