@@ -1,3 +1,5 @@
+import '../css/styles.css'
+
 export default function Post() {
     return (
         <div className="article-container">

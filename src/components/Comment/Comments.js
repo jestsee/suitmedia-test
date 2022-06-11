@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CommentItem from "./CommentItem";
+import '../../css/styles.css'
 
 class Comments extends Component {
     state = {
@@ -53,7 +54,10 @@ class Comments extends Component {
             )
         }
         return <div className="comment">
-            <h2>Komentar</h2>
+            {/* <h2 className="divider">Komentar</h2> */}
+            <div className="divider">
+                <h2><span>Komentar</span></h2>
+            </div>
             {temp}
         </div>
     }

@@ -62,9 +62,8 @@ export default function CommentForm() {
 
     return (
         <form onSubmit={handleSubmit} className='add-comment-container'>
-            <div className='header'>
-                <h2>Tambahkan komentar</h2>
-                <hr className='solid'></hr>
+            <div className="divider">
+                <h2><span>Tambahkan Komentar</span></h2>
             </div>
             <div className='comment-form-container'>
                 <div className={colorDecider(formErrors.name)}>
