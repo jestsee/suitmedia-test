@@ -1,0 +1,30 @@
+.discussion-container {
+  margin-left: 25px;
+  width: 18vw;
+}
+
+.discussion-container h2 {
+  margin-bottom: 28px;
+}
+
+.discussion-list li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  vertical-align: text-top;
+}
+
+.discussion-list .numbers {
+  display: inline-block;
+  margin-right: 15px;
+  background-color: #413d38;
+  vertical-align: top;
+  color: white;
+  padding: 3px 10px 3px;
+  font-size: 11pt;
+}
+
+.discussion-list a {
+  display: inline-block;
+  width: 15vw;
+  color: black;
+}
