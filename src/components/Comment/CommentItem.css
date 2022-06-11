@@ -5,11 +5,17 @@
 
 .comment-item img {
     width: 7rem;
+    margin-right: 1.2rem;
+}
+
+.comment-info {
+    vertical-align: top;
+    display: inline-block;
 }
 
 /* reply */
 .reply {
-    margin-left: 7rem;
+    margin-left: 8.2rem;
     margin-bottom: 1rem;
     padding: 0;
 }
@@ -21,10 +27,31 @@
 /* vote */
 .vote {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #EEEEEE;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.up:hover {
+    background: greenyellow;
+    color: white;
+}
+
+.down:hover {
+    background: red;
+    color: white;
+}
+
+.vote .fa-solid {
+    transform: translateY(25%);
+    -webkit-text-stroke: 1.25px;
 }
 
 .point-container p {
     display: inline-block;
     margin-right: 0.5rem;
+    margin-top: 2rem;
 }
