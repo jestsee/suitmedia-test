@@ -3,9 +3,21 @@ import './CommentItem.css';
 
 export default function CommentItem({img, name, date, message, point, replies, isReply=false})  {
     let [voteCounter, setVoteCounter] = useState(point)
+    const [upvoted, setUpvoted] = useState(false)
+    const [downvoted, setDownvoted] = useState(false)
 
-    const incrementVote = () => (setVoteCounter(++voteCounter))
-    const decrementVote = () => (setVoteCounter(--voteCounter))
+    const incrementVote = () => {
+        if(!upvoted && !downvoted) {
+            setVoteCounter(++voteCounter)
+            setUpvoted(true)
+        }
+    }
+    const decrementVote = () => {
+        if(!upvoted && !downvoted) {
+            setVoteCounter(--voteCounter)
+            setDownvoted(true)
+        }
+    }
     
     console.log("img: ", img);
     return (
@@ -18,10 +30,10 @@ export default function CommentItem({img, name, date, message, point, replies, i
                     <p>{message}</p>
                     <div className='point-container'>
                         <p>{voteCounter} point</p>
-                        <div className='up vote' onClick={incrementVote}>
+                        <div className={upvoted && !downvoted ? 'upvoted vote' :'up vote'} onClick={incrementVote}>
                             <span className="fa-solid fa-arrow-up"></span>
                         </div>
-                        <div className='down vote' onClick={decrementVote}>
+                        <div className={!upvoted && downvoted ? 'downvoted vote' :'down vote'} onClick={decrementVote}>
                             <span className="fa-solid fa-arrow-down"></span>
                         </div>
                     </div>

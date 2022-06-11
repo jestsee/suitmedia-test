@@ -38,12 +38,12 @@
     vertical-align: middle;
 }
 
-.up:hover {
+.up:hover, .upvoted {
     background: greenyellow;
     color: white;
 }
 
-.down:hover {
+.down:hover, .downvoted {
     background: red;
     color: white;
 }
