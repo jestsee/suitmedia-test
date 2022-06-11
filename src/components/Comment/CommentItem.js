@@ -1,6 +1,12 @@
+import React, { useState } from "react"
 import './CommentItem.css';
 
 export default function CommentItem({img, name, date, message, point, replies, isReply=false})  {
+    let [voteCounter, setVoteCounter] = useState(point)
+
+    const incrementVote = () => (setVoteCounter(++voteCounter))
+    const decrementVote = () => (setVoteCounter(--voteCounter))
+    
     console.log("img: ", img);
     return (
         <div className='comment-container'>
@@ -11,11 +17,11 @@ export default function CommentItem({img, name, date, message, point, replies, i
                     <p>{date}</p>
                     <p>{message}</p>
                     <div className='point-container'>
-                        <p>{point} point</p>
-                        <div className='up vote'>
+                        <p>{voteCounter} point</p>
+                        <div className='up vote' onClick={incrementVote}>
                             <span className="fa-solid fa-arrow-up"></span>
                         </div>
-                        <div className='down vote'>
+                        <div className='down vote' onClick={decrementVote}>
                             <span className="fa-solid fa-arrow-down"></span>
                         </div>
                     </div>

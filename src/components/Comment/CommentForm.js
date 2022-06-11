@@ -11,7 +11,7 @@ export default function CommentForm() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        // console.log(formValues);
     };
 
     const handleSubmit = (e) => {
@@ -20,9 +20,11 @@ export default function CommentForm() {
         setIsSubmit(true);
     };
 
+    // track each field values
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-        console.log(formValues);
+            console.log(formValues)
+            window.location.reload()
         }
     });
 
@@ -41,6 +43,10 @@ export default function CommentForm() {
         }
         return errors;
     };
+
+    const resetForm = () => {
+        setFormValues(initialValues)
+    }
 
     return (
         <form onSubmit={handleSubmit} className='add-comment-container'>
@@ -77,12 +83,12 @@ export default function CommentForm() {
                     value={formValues.comment}
                     onChange={handleChange}
                     />
-                    <p>{formErrors.name}</p>
+                    <p>{formErrors.comment}</p>
                 </div>
             </div>
             <div className='comment-button-container'>
-                <button className='reset-button'>Reset</button>
-                <button className='submit-button'>Submit</button>
+                <button className='reset-button' onClick={resetForm} type="reset">Reset</button>
+                <button className='submit-button' >Submit</button>
             </div>
         </form>
     )
