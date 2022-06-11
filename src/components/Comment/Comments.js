@@ -30,13 +30,14 @@ class Comments extends Component {
 
     render() {
         const { error, isLoaded, comments: items } = this.state;
+        var temp = null;
         if(error) {
-            return <div>Error: {error.message}</div>
+            temp = <div>Error: {error.message}</div>
         } else if (!isLoaded) {
-            return <div>Loading...</div>
+            temp = <div>Loading...</div>
         } else {
-            return (
-                <ul>
+            temp = (
+                <div>
                     {items.map(item => (
                         <CommentItem
                         key={item.id}
@@ -48,9 +49,13 @@ class Comments extends Component {
                         replies={item.replies}
                         />
                     ))}
-                </ul>
+                </div>
             )
         }
+        return <div className="comment">
+            <h2>Komentar</h2>
+            {temp}
+        </div>
     }
 }
 

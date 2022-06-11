@@ -3,26 +3,25 @@ import './CommentItem.css';
 export default function CommentItem({img, name, date, message, point, replies, isReply=false})  {
     console.log("img: ", img);
     return (
-        <>
-        <div className={!isReply ? "comment-item" : "comment-item reply"}>
-            <img src={img}></img>
-            <div className='comment-info'>
-                <h3>{name}</h3>
-                <p>{date}</p>
-                <p>{message}</p>
-                <div className='point-container'>
-                    <p>{point} point</p>
-                    <div className='up vote'>
-                        <span className="fa-solid fa-arrow-up"></span>
-                    </div>
-                    <div className='down vote'>
-                        <span className="fa-solid fa-arrow-down"></span>
+        <div className='comment-container'>
+            <div className={!isReply ? "comment-item" : "comment-item reply"}>
+                <img src={img}></img>
+                <div className='comment-info'>
+                    <h3>{name}</h3>
+                    <p>{date}</p>
+                    <p>{message}</p>
+                    <div className='point-container'>
+                        <p>{point} point</p>
+                        <div className='up vote'>
+                            <span className="fa-solid fa-arrow-up"></span>
+                        </div>
+                        <div className='down vote'>
+                            <span className="fa-solid fa-arrow-down"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {/* bikin agak menjorok */}
-        {replies != null ? replies.map(
+            {replies != null ? replies.map(
             item => (
                 <CommentItem
                     key={item.id}
@@ -34,8 +33,8 @@ export default function CommentItem({img, name, date, message, point, replies, i
                     replies={item.replies}
                     isReply = {true}
                     />
-            )
-        ) : null}
-        </>
+                )
+            ) : null}
+        </div>
     )
 }

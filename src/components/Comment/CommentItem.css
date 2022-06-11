@@ -1,10 +1,12 @@
 .comment-item {
+    display: flex;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
 .comment-item img {
     width: 7rem;
+    height: 7rem;
     margin-right: 1.2rem;
 }
 
@@ -17,11 +19,12 @@
 .reply {
     margin-left: 8.2rem;
     margin-bottom: 1rem;
-    padding: 0;
+    /* padding: 0; */
 }
 
 .reply img {
     width: 3.5rem;
+    height: 3.5rem;
 }
 
 /* vote */
