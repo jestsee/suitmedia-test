@@ -26,7 +26,7 @@
 
 .nav-menu {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     list-style: none;
     height: 80px;
     margin: 0;
@@ -65,6 +65,7 @@
     margin-left: 20px;
     margin-right: 20px;
     position: relative;
+    line-height: 72px;
 }
 
 .search-container input {
@@ -97,7 +98,6 @@
     width: 250px;
     background-color: #413d38;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -115,9 +115,19 @@
   display: block;
 }
 
+.categories-mobile {
+  display: none;
+}
+
+.search-container-1 {
+  display: none;
+}
+
 @media screen and (max-width: 1078px) {
     .NavbarItems {
-        position: relative;
+      position: fixed;
+      top: 0;
+      width: 100%;
     }
 
     .nav-menu {
@@ -126,7 +136,7 @@
         width: 85%;
         height: auto;
         position: absolute;
-        top: 0px;
+        top: 80px;
         right: -100%;
         opacity: 1;
         transition: all 0.5 ease;
@@ -134,19 +144,25 @@
 
     .nav-menu.active {
         background: #413d38;
-        left: 0;
+        right: 0;
         opacity: 1;
         transition: all 0.5 ease;
         z-index: 1;
-        height: 100vw;
+        height: 100%;
         align-items: flex-end;
+        overflow: hidden;
+        position: fixed;
     }
 
     .nav-links {
-        text-align: right;
         padding-right: 2rem;
         width: 100%;
         display: table;
+        text-align: right;
+    }
+
+    .categories-mobile a {
+      padding-right: 4rem;
     }
 
     .nav-links:hover {
@@ -178,8 +194,16 @@
         font-size: 2rem;
     }
 
-    .search-container {
-        display: none;
+    .search-container input {
+      width: 70vw;
+    }
+
+    .dropdown-menu:hover .dropdown-item {
+      display: none;
+    }
+
+    .categories-mobile {
+      display: block;
     }
 
     /* .nav-links-mobile {

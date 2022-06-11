@@ -40,10 +40,10 @@ class Navbar extends Component {
       <>
         <nav className="NavbarItems">
           <h1 className="navbar-logo">Forum anak IT</h1>
-          <div className="search-container">
+          {/* <div className="search-container">
             <span className="fa fa-search"></span>
             <input type="text" placeholder="Search" />
-          </div>
+          </div> */}
           <div className="menu-icon" onClick={this.handleHamburgerClick}>
             <i
               className={
@@ -56,11 +56,24 @@ class Navbar extends Component {
               this.state.hamburgerClicked ? "nav-menu active" : "nav-menu"
             }
           >
+            <li>
+              < div className="search-container">
+                <span className="fa fa-search"></span>
+                <input type="text" placeholder="Search" />
+              </div>
+            </li>
             <li className="dropdown-menu">
-              <a className="nav-links dropdown-button" href="#">
+              <a className="nav-links dropdown-button desktop" href="#">
                 Categories
               </a>
-              <div className="dropdown-item">
+              <div className="categories-mobile dropdown-item-1">
+                { DropdownItems.map((item, index) => {
+                  return(
+                    <a key={index} className="nav-links" href="#">{item.title}</a>
+                  )
+                })}
+              </div>
+              <div className="dropdown-item desktop">
                 {DropdownItems.map((item, index) => {
                   return (
                     <a key={index} className={item.cName} href={item.url}>
