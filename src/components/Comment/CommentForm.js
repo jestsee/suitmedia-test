@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../../css/styles.css'
+import './CommentForm.css'
 
 export default function CommentForm() {
     const initialValues = { name: "", email: "", comment: "" };
@@ -48,6 +49,17 @@ export default function CommentForm() {
         setFormValues(initialValues)
     }
 
+    function colorDecider(error) {
+        if (error == null && isSubmit) {
+            // green
+            return "comment-form-item green"
+        } else if (error != null && isSubmit) {
+            // red
+            return "comment-form-item red"
+        }
+        return "comment-form-item"
+    }
+
     return (
         <form onSubmit={handleSubmit} className='add-comment-container'>
             <div className='header'>
@@ -55,7 +67,7 @@ export default function CommentForm() {
                 <hr className='solid'></hr>
             </div>
             <div className='comment-form-container'>
-                <div className='comment-form-item'>
+                <div className={colorDecider(formErrors.name)}>
                     <input
                     type="text"
                     name="name"
@@ -65,7 +77,7 @@ export default function CommentForm() {
                     />
                     <p>{formErrors.name}</p>
                 </div>
-                <div className='comment-form-item'>
+                <div className={colorDecider(formErrors.email)}>
                     <input
                     type="text"
                     name="email"
@@ -75,13 +87,13 @@ export default function CommentForm() {
                     />
                     <p>{formErrors.email}</p>
                 </div>
-                <div className='comment-form-item'>
-                    <input
-                    type="text"
-                    name="comment"
-                    placeholder='Komentar anda'
-                    value={formValues.comment}
-                    onChange={handleChange}
+                <div className={colorDecider(formErrors.comment)}>
+                    <textarea
+                        type="text"
+                        name="comment"
+                        placeholder='Komentar anda'
+                        value={formValues.comment}
+                        onChange={handleChange}
                     />
                     <p>{formErrors.comment}</p>
                 </div>

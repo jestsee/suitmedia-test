@@ -2,6 +2,11 @@ body.active-modal {
     overflow-y: hidden;
 }
 
+h2 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
 .btn-modal {
     padding: 10px 20px;
     display: block;
@@ -24,16 +29,16 @@ body.active-modal {
 }
 .modal-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
-    padding: 14px 28px;
-    border-radius: 3px;
-    /* max-width: 800px; */
+    background: white;
+    padding: 20px 18px 20px;
+    border-radius: 2px;
+    max-width: 580px;
     min-width: 300px;
-    width: 40vw;
+    width: 50vw;
 }
 
 .close-modal {
@@ -47,22 +52,26 @@ body.active-modal {
 .input-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin: 10px 10px 0 0;
+    margin-bottom: 10px;
+    margin-top: 18px;
 }
 
 .input-container input[type="text"],
 input[type="password"] {
-  height: 25px;
+  height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.modal-content button {
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 15px;
-    background: #01d28e; /* TODO */
-    border: 1px solid #01d28e;
-    color: #fff;
-    padding: 10px 20px;
-  }
+.green input, .green input:focus {
+    outline: none !important;
+    border: 1px solid rgb(27, 165, 0);
+}
+
+.red input, .red textarea,
+.red input:focus, .red textarea:focus {
+    outline: none !important;
+    border: 1px solid rgb(255, 60, 0);
+}
+.red p {
+    color: rgb(255, 60, 0);
+}

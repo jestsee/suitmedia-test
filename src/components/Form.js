@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
+import "./Comment/CommentForm.css"
 
 export default function Form({ register }) {
   // initial values
@@ -12,7 +13,7 @@ export default function Form({ register }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   const handleSubmit = (e) => {
@@ -25,6 +26,7 @@ export default function Form({ register }) {
     // successfully login
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
+      window.location.reload()
     }
   });
 
@@ -44,13 +46,22 @@ export default function Form({ register }) {
     return errors;
   };
 
+  function colorDecider(error) {
+    if (error == null && isSubmit) {
+      return "input-container green"
+    } else if (error != null && isSubmit) {
+      return "input-container red"
+    }
+    return "input-container"
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       {/* name */}
       <h2>{register ? "Register" : "Login"}</h2>
       {register ? (
         <>
-          <div className="input-container">
+          <div className={colorDecider(formErrors.name)}>
             <label>Name</label>
             <input
               type="text"
@@ -64,7 +75,7 @@ export default function Form({ register }) {
       ) : null}
 
       {/* email */}
-      <div className="input-container">
+      <div className={colorDecider(formErrors.email)}>
         <label>Email</label>
         <input
           type="text"
@@ -76,7 +87,7 @@ export default function Form({ register }) {
       <p>{formErrors.email}</p>
 
       {/* password */}
-      <div className="input-container">
+      <div className={colorDecider(formErrors.password)}>
         <label>Password</label>
         <input
           type="password"
@@ -86,7 +97,7 @@ export default function Form({ register }) {
         />
       </div>
       <p>{formErrors.password}</p>
-      <button>{register ? "Create account" : "Login"}</button>
+      <button className="submit-button">{register ? "Create account" : "Login"}</button>
     </form>
   );
 }

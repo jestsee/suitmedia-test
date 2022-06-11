@@ -39,12 +39,12 @@
 }
 
 .up:hover, .upvoted {
-    background: greenyellow;
+    background: rgb(27, 165, 0);
     color: white;
 }
 
 .down:hover, .downvoted {
-    background: red;
+    background: rgb(255, 60, 0);
     color: white;
 }
 
