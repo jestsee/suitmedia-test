@@ -63,43 +63,43 @@ export default function CommentForm() {
     return (
         <form onSubmit={handleSubmit} className='add-comment-container'>
             <div className="divider">
-                <h2><span>Tambahkan Komentar</span></h2>
+                <h2 className='font-face-gmb'><span>Tambahkan Komentar</span></h2>
             </div>
             <div className='comment-form-container'>
                 <div className={colorDecider(formErrors.name)}>
-                    <input
+                    <input className='font-face-gm'
                     type="text"
                     name="name"
                     placeholder='Nama'
                     value={formValues.name}
                     onChange={handleChange}
                     />
-                    <p>{formErrors.name}</p>
+                    <p className='font-face-gm'>{formErrors.name}</p>
                 </div>
                 <div className={colorDecider(formErrors.email)}>
-                    <input
+                    <input className='font-face-gm'
                     type="text"
                     name="email"
                     placeholder='Email'
                     value={formValues.email}
                     onChange={handleChange}
                     />
-                    <p>{formErrors.email}</p>
+                    <p className='font-face-gm'>{formErrors.email}</p>
                 </div>
                 <div className={colorDecider(formErrors.comment)}>
                     <textarea
-                        type="text"
+                        type="text" className='font-face-gm'
                         name="comment"
                         placeholder='Komentar anda'
                         value={formValues.comment}
                         onChange={handleChange}
                     />
-                    <p>{formErrors.comment}</p>
+                    <p className='font-face-gm'>{formErrors.comment}</p>
                 </div>
             </div>
             <div className='comment-button-container'>
-                <button className='reset-button' onClick={resetForm} type="reset">Reset</button>
-                <button className='submit-button' >Submit</button>
+                <button className='reset-button font-face-gm' onClick={resetForm} type="reset">Reset</button>
+                <button className='submit-button font-face-gm' >Submit</button>
             </div>
         </form>
     )

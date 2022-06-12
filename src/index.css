@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "PT_SansWebBold";
+  src: local("PT_SansWebBold"), url("./fonts/PT_Sans-Web-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "PT_SansWebBoldItalic";
+  src: local("PT_SansWebBoldItalic"), url("./fonts/PT_Sans-Web-BoldItalic.ttf") format("truetype");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "PT_SansWebItalic";
+  src: local("PT_SansWebItalic"), url("./fonts/PT_Sans-Web-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PT_SansWebRegular";
+  src: local("PT_SansWebRegular"), url("./fonts/PT_Sans-Web-Regular.ttf") format("truetype");
+}

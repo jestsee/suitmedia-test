@@ -3,3 +3,16 @@
   margin: 0;
   padding: 0;
 }
+
+.font-face-gmb {
+  font-family: "PT_SansWebBold";
+}
+.font-face-gmbi {
+  font-family: "PT_SansWebBoldItalic";
+}
+.font-face-gmi {
+  font-family: "PT_SansWebItalic";
+}
+.font-face-gm {
+  font-family: "PT_SansWebRegular";
+}

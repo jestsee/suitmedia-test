@@ -25,11 +25,11 @@ export default function CommentItem({img, name, date, message, point, replies, i
             <div className={!isReply ? "comment-item" : "comment-item reply"}>
                 <img src={img}></img>
                 <div className='comment-info'>
-                    <h3 className="name-date">{name}</h3>
-                    <p className="name-date">{new Intl.DateTimeFormat('id', {year: 'numeric', month: 'long',day: '2-digit', hour: 'numeric', minute: 'numeric'}).format(new Date(date))}</p>
-                    <p>{message}</p>
+                    <h3 className="name-date font-face-gmb">{name}</h3>
+                    <p className="name-date font-face-gm">{new Intl.DateTimeFormat('id', {year: 'numeric', month: 'long',day: '2-digit', hour: 'numeric', minute: 'numeric'}).format(new Date(date))}</p>
+                    <p className='font-face-gm'>{message}</p>
                     <div className='point-container'>
-                        <p>{voteCounter} point</p>
+                        <p className='font-face-gm'>{voteCounter} point</p>
                         <div className={upvoted && !downvoted ? 'upvoted vote' :'up vote'} onClick={incrementVote}>
                             <span className="fa fa-arrow-up"></span>
                         </div>

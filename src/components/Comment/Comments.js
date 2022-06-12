@@ -56,7 +56,7 @@ class Comments extends Component {
         return <div className="comment">
             {/* <h2 className="divider">Komentar</h2> */}
             <div className="divider">
-                <h2><span>Komentar</span></h2>
+                <h2 className='font-face-gmb'><span>Komentar</span></h2>
             </div>
             {temp}
         </div>

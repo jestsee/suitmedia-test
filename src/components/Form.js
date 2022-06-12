@@ -59,12 +59,12 @@ export default function Form({ register }) {
   return (
     <form onSubmit={handleSubmit}>
       {/* name */}
-      <h2>{register ? "Register" : "Login"}</h2>
+      <h2 className='font-face-gmb'>{register ? "Register" : "Login"}</h2>
       {register ? (
         <>
           <div className={colorDecider(formErrors.name)}>
-            <label>Name</label>
-            <input
+            <label className='font-face-gm'>Name</label>
+            <input className='font-face-gm'
               type="text"
               name="name"
               value={formValues.name}
@@ -77,8 +77,8 @@ export default function Form({ register }) {
 
       {/* email */}
       <div className={colorDecider(formErrors.email)}>
-        <label>Email</label>
-        <input
+        <label className='font-face-gm'>Email</label>
+        <input className='font-face-gm'
           type="text"
           name="email"
           value={formValues.email}
@@ -89,8 +89,8 @@ export default function Form({ register }) {
 
       {/* password */}
       <div className={colorDecider(formErrors.password)}>
-        <label>Password</label>
-        <input
+        <label className='font-face-gm'>Password</label>
+        <input className='font-face-gm'
           type="password"
           name="password"
           value={formValues.password}
@@ -98,7 +98,7 @@ export default function Form({ register }) {
         />
         <p>{formErrors.password}</p>
       </div>
-      <button className="submit-button">{register ? "Create account" : "Login"}</button>
+      <button className="submit-button font-face-gm">{register ? "Create account" : "Login"}</button>
     </form>
   );
 }

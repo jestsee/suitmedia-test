@@ -39,7 +39,7 @@ class Navbar extends Component {
     return (
       <>
         <nav className="NavbarItems">
-          <h1 className="navbar-logo">Forum anak IT</h1>
+          <h1 className="navbar-logo font-face-gmb">Forum anak IT</h1>
           {/* <div className="search-container">
             <span className="fa fa-search"></span>
             <input type="text" placeholder="Search" />
@@ -63,20 +63,20 @@ class Navbar extends Component {
               </div>
             </li>
             <li className="dropdown-menu">
-              <a className="nav-links dropdown-button desktop" href="#">
+              <a className="nav-links dropdown-button desktop font-face-gm" href="#">
                 Categories
               </a>
               <div className="categories-mobile dropdown-item-1">
                 { DropdownItems.map((item, index) => {
                   return(
-                    <a key={index} className="nav-links" href="#">{item.title}</a>
+                    <a key={index} className="nav-links font-face-gm" href="#">{item.title}</a>
                   )
                 })}
               </div>
               <div className="dropdown-item desktop">
                 {DropdownItems.map((item, index) => {
                   return (
-                    <a key={index} className={item.cName} href={item.url}>
+                    <a key={index} className={item.cName + "font-face-gm"} href={item.url}>
                       {item.title}
                     </a>
                   );
@@ -84,13 +84,13 @@ class Navbar extends Component {
               </div>
             </li>
             <li>
-              <a className="nav-links" href="#" onClick={this.handleLoginClick}>
+              <a className="nav-links font-face-gm" href="#" onClick={this.handleLoginClick}>
                 Login
               </a>
             </li>
             <li>
               <a
-                className="nav-links"
+                className="nav-links font-face-gm"
                 href="#"
                 onClick={this.handleRegisterClick}
               >
