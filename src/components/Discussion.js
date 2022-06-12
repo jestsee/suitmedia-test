@@ -9,10 +9,14 @@ export default function Discussion () {
         <ul>
           { DiscussionItems.map((item, index) => {
               return (
-                  <li key={index} ><div className="numbers">{index+1}</div>
-                    <a className={item.cName} href={item.url}>
-                      {item.title}
-                  </a></li>
+                  <li key={index} >
+                    <div className="numbers">{index+1}</div>
+                    <div className={item.cName}>
+                      <a href={item.url}>
+                        {item.title}
+                      </a>
+                    </div>
+                  </li>
               )
             })
           }

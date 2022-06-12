@@ -11,7 +11,7 @@
   list-style-type: none;
   margin-bottom: 15px;
   vertical-align: text-top;
-  display: inline-block;
+  display: flex;
 }
 
 .discussion-list .numbers {
@@ -22,10 +22,27 @@
   color: white;
   padding: 3px 10px 3px;
   font-size: 11pt;
+  height: 28px;
 }
 
-.discussion-list a {
+.discussion-item {
   display: inline-block;
-  width: 15vw;
+  /* width: 14.5vw; */
   color: black;
+}
+
+@media screen and (max-width: 1078px) {
+  .discussion-container {
+    margin-top: 30px;
+    margin-left: 2vw;
+    width: auto;
+  }
+
+  .discussion-list li {
+    display: block;
+  }
+
+  .discussion-item {
+    width: 80vw;
+  }
 }
