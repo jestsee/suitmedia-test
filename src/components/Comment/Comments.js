@@ -10,7 +10,7 @@ class Comments extends Component {
     };
 
     componentDidMount() {
-        fetch("http://localhost:3001/comments")
+        fetch("https://comments-json-server.herokuapp.com/comments")
             .then(res => res.json())
             .then(
                 (result) => {
