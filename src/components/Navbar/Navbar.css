@@ -157,6 +157,8 @@
     .nav-links {
         padding-right: 2rem;
         width: 100%;
+        margin-top: -10px;
+        margin-bottom: -10px;
         display: table;
         text-align: right;
     }
